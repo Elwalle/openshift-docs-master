@@ -1,0 +1,15 @@
+[id="control-plane"]
+= The {product-title} control plane
+include::modules/common-attributes.adoc[]
+:context: control-plane
+toc::[]
+
+include::modules/understanding-control-plane.adoc[leveloffset=+1]
+
+include::modules/architecture-machine-roles.adoc[leveloffset=+2]
+
+include::modules/operators-overview.adoc[leveloffset=+2]
+
+include::modules/update-service-overview.adoc[leveloffset=+3]
+
+include::modules/understanding-machine-config-operator.adoc[leveloffset=+3]

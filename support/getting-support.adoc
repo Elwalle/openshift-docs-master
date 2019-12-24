@@ -1,0 +1,21 @@
+[id="getting-support"]
+= Getting support
+include::modules/common-attributes.adoc[]
+:context: getting-support
+
+toc::[]
+
+// Getting support
+ifdef::openshift-enterprise,openshift-dedicated,openshift-origin[]
+
+include::modules/support.adoc[leveloffset=+1]
+
+endif::openshift-enterprise,openshift-dedicated,openshift-origin[]
+
+// Getting Online Starter support
+ifdef::openshift-online[]
+
+include::modules/starter-support.adoc[leveloffset=+1]
+
+endif::openshift-online[]
+

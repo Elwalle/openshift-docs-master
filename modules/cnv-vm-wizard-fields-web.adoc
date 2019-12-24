@@ -1,0 +1,78 @@
+// Module included in the following assemblies:
+//
+// * cnv/cnv_users_guide/cnv-create-vms.adoc
+// * cnv/cnv_users_guide/cnv-importing-vmware-vm.adoc
+// * cnv/cnv_users_guide/cnv-creating-vm-template.adoc
+
+// VM wizard includes additional options to VM template wizard
+// Call appropriate attribute in the assembly
+
+[id="cnv-vm-wizard-fields-web_{context}"]
+ifdef::virtualmachine[]
+= Virtual machine wizard fields
+endif::[]
+ifdef::vmtemplate[]
+= Virtual machine template wizard fields
+endif::[]
+
+|===
+|Name |Parameter |Description
+
+|Name
+|
+|The name can contain lowercase letters (`a-z`), numbers (`0-9`), and hyphens (`-`), up to a maximum of 253 characters. The first and last characters must be alphanumeric. The name must not contain uppercase letters, spaces, periods (`.`), or special characters.
+
+|Description
+|
+|Optional description field.
+
+ifdef::virtualmachine[]
+|Template
+|
+|Template from which to create the virtual machine. Selecting a template will automatically complete other fields.
+endif::[]
+
+.5+|Provision Source
+|PXE
+|Provision virtual machine from PXE menu. Requires a PXE-capable NIC in the cluster.
+
+|URL
+|Provision virtual machine from an image available from an *HTTP* or *S3* endpoint.
+
+|Container
+|Provision virtual machine from a bootable operating system container located in a registry accessible from the cluster. Example: `_kubevirt/cirros-registry-disk-demo_`.
+
+|Cloned Disk
+|Provision source is a cloned disk.
+
+|Import
+|Import virtual machine from a supported provider.
+
+|Operating System
+|
+|A list of operating systems available in the cluster. This is the primary operating system for the virtual machine. If you select `Import` as the *Provider Source*, the operating system is filled in automatically, based on the operating system of the VMware virtual machine being imported.
+
+|Flavor
+|small, medium, large, tiny, Custom
+|Presets that determine the amount of CPU and memory allocated to the virtual machine.
+
+.3+|Workload Profile
+|desktop
+|A virtual machine configuration for use on a desktop.
+
+|generic
+|A virtual machine configuration that balances performance and compatibility for a broad range of workloads.
+
+|high performance
+|A virtual machine configuration that is optimized for high-performance loads.
+
+ifdef::virtualmachine[]
+|Start virtual machine on creation
+|
+|Select to automatically start the virtual machine upon creation.
+endif::[]
+
+|Use cloud-init
+|
+|Select to enable the cloud-init fields.
+|===

@@ -1,0 +1,36 @@
+[id="updating-cluster-rhel-compute"]
+= Updating a cluster that includes RHEL compute machines
+include::modules/common-attributes.adoc[]
+:context: updating-cluster-rhel-compute
+
+toc::[]
+
+You can update, or upgrade, an {product-title} cluster. If your cluster contains
+Red Hat Enterprise Linux (RHEL) machines, you must perform more steps to update
+those machines.
+
+.Prerequisites
+
+* Have access to the cluster as a user with `admin` privileges.
+See xref:../authentication/using-rbac.adoc[Using RBAC to define and apply permissions].
+* Have a recent xref:../backup_and_restore/backing-up-etcd.adoc#backup-etcd[etcd backup] in case your upgrade fails and you must xref:../backup_and_restore/disaster_recovery/scenario-2-restoring-cluster-state.adoc#dr-restoring-cluster-state[restore your cluster to a previous state].
+
+include::modules/update-service-overview.adoc[leveloffset=+1]
+
+include::modules/understanding-upgrade-channels.adoc[leveloffset=+1]
+
+include::modules/update-upgrading-web.adoc[leveloffset=+1]
+
+[id="updating-cluster-rhel-compute-hooks"]
+== (Optional) Adding hooks to perform Ansible tasks on RHEL machines
+
+You can use _hooks_ to run Ansible tasks on the RHEL compute machines during
+the {product-title} update.
+
+include::modules/rhel-compute-about-hooks.adoc[leveloffset=+2]
+
+include::modules/rhel-compute-using-hooks.adoc[leveloffset=+2]
+
+include::modules/rhel-compute-available-hooks.adoc[leveloffset=+2]
+
+include::modules/rhel-compute-updating.adoc[leveloffset=+1]

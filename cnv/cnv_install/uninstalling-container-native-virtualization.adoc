@@ -1,0 +1,23 @@
+[id="uninstalling-container-native-virtualization"]
+= Uninstalling container-native virtualization
+include::modules/cnv-document-attributes.adoc[]
+:context: uninstalling-container-native-virtualization
+toc::[]
+
+You can uninstall {CNVProductName} by using the {product-title}
+xref:../../web-console/web-console.adoc#web-console-overview_web-console[web console].
+
+.Prerequisites
+
+* {CNVProductNameStart} 2.1
+
+include::modules/cnv-deleting-custom-resource.adoc[leveloffset=+1]
+
+include::modules/cnv-deleting-hco-subscription.adoc[leveloffset=+1]
+
+[NOTE]
+====
+You can now delete the `openshift-cnv` namespace.
+====
+
+include::modules/deleting-a-project-using-the-web-console.adoc[leveloffset=+1]

@@ -1,0 +1,15 @@
+[id="olm-adding-operators-to-a-cluster"]
+= Adding Operators to a cluster
+include::modules/common-attributes.adoc[]
+:context: olm-adding-operators-to-a-cluster
+
+toc::[]
+
+This guide walks cluster administrators through installing Operators to an
+{product-title} cluster.
+
+include::modules/olm-installing-operators-from-operatorhub.adoc[leveloffset=+1]
+include::modules/olm-installing-from-operatorhub-using-web-console.adoc[leveloffset=+2]
+ifdef::openshift-enterprise,openshift-origin[]
+include::modules/olm-installing-from-operatorhub-using-cli.adoc[leveloffset=+2]
+endif::[]

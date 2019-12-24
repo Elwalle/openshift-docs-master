@@ -1,0 +1,22 @@
+// Module included in the following assemblies:
+//
+// * scalability_and_performance/using-node-tuning-operator.adoc
+
+[id="accessing-an-example-node-tuning-operator-specification_{context}"]
+= Accessing an example Node Tuning Operator specification
+
+Use this process to access an example Node Tuning Operator specification.
+
+.Procedure
+
+ . Run:
++
+----
+$ oc get Tuned/default -o yaml -n openshift-cluster-node-tuning-operator
+----
+
+Note the default CR is meant for delivering standard node-level tuning for
+the {product-title} platform and any custom changes to the default CR will be
+overwritten by the Operator. For custom tuning, create your own tuned CRs.
+Newly created CRs will be combined with the default CR and custom tuning
+applied to {product-title} nodes based on node/pod labels and profile priorities.

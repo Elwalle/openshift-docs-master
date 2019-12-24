@@ -1,0 +1,51 @@
+[id="configuring-registry-operator"]
+= Image Registry Operator in {product-title}
+include::modules/common-attributes.adoc[]
+:context: configuring-registry-operator
+toc::[]
+
+[id="image-registry-on-cloud"]
+== Image Registry on cloud platforms and OpenStack
+
+The Image Registry Operator installs a single instance of the {product-title}
+registry, and manages all registry configuration, including setting up
+registry storage.
+
+[NOTE]
+====
+Storage is only automatically configured when you install an
+installer-provisioned infrastructure cluster on AWS, GCP, Azure, or OpenStack.
+====
+
+After the control plane deploys, the Operator will create a default
+`configs.imageregistry.operator.openshift.io` resource instance based on
+configuration detected in the cluster.
+
+If insufficient information is available to define a complete
+`configs.imageregistry.operator.openshift.io` resource, the incomplete resource
+will be defined and the operator will update the resource status with
+information about what is missing.
+
+The Image Registry Operator runs in the `openshift-image-registry` namespace,
+and manages the registry instance in that location as well. All configuration
+and workload resources for the registry reside in that namespace.
+
+[id="image-registry-on-bare-metal-vsphere"]
+== Image Registry on bare metal and vSphere
+
+include::modules/registry-removed.adoc[leveloffset=+2]
+
+include::modules/registry-operator-configuration-resource-overview.adoc[leveloffset=+1]
+
+include::modules/registry-operator-default-crd.adoc[leveloffset=+1]
+
+include::modules/registry-operator-config-resources-configmap.adoc[leveloffset=+1]
+
+include::modules/registry-operator-config-resources-secret.adoc[leveloffset=+1]
+
+== Additional resources
+
+* xref:../registry/configuring-registry-storage/configuring-registry-storage-aws-user-infrastructure.adoc#configuring-registry-storage-aws-user-infrastructure[Configuring the registry for AWS user-provisioned infrastructure]
+* xref:../registry/configuring-registry-storage/configuring-registry-storage-gcp-user-infrastructure.adoc#configuring-registry-storage-gcp-user-infrastructure[Configuring the registry for GCP user-provisioned infrastructure]
+* xref:../registry/configuring-registry-storage/configuring-registry-storage-baremetal.adoc#configuring-registry-storage-baremetal[Configuring the registry for bare metal]
+* xref:../registry/configuring-registry-storage/configuring-registry-storage-vsphere.adoc#configuring-registry-storage-vsphere[Configuring the registry for vSphere]

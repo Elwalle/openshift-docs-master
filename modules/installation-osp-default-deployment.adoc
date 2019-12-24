@@ -1,0 +1,46 @@
+// Module included in the following assemblies:
+//
+// * installing/installing_openstack/installing-openstack-installer.adoc
+// * installing/installing_openstack/installing-openstack-installer-custom.adoc
+
+ifeval::["{context}" == "installing-openstack-installer-custom"]
+:osp-custom:
+endif::[]
+
+[id="installation-osp-default-deployment_{context}"]
+= Resource guidelines for installing {product-title} on OpenStack
+
+Your quota must meet the following requirements to run the {product-title} installation program in {rh-openstack-first}.
+
+.Recommended resources for a default {product-title} cluster on {rh-openstack}
+[options="header"]
+|================================
+|Resource              | Value
+|Floating IP addresses | 2
+|Ports                 | 15
+|Routers               | 1
+|Subnets               | 1
+|RAM                   | 112 GB
+|vCPUs                 | 28
+|Volume storage        | 175 GB
+|Instances             | 7
+|Security groups       | 3
+|Security group rules  | 60
+|Swift containers      | 2
+|Swift objects         | 1
+|Swift available space | 10 MB or more
+|================================
+
+[NOTE]
+Swift space requirements vary depending on the size of the bootstrap Ignition file and image registry.
+
+A cluster might function with fewer than recommended resources, but its performance is not guaranteed.
+
+[NOTE]
+By default, your security group and security group rule quotas might be low. If you encounter problems, run `openstack quota set --secgroups 3 --secgroup-rules 60 <project>` to increase them.
+
+An {product-title} deployment comprises control plane machines, compute machines, and a bootstrap machine.
+
+ifeval::["{context}" == "installing-openstack-installer-custom"]
+:!osp-custom:
+endif::[]

@@ -1,0 +1,1368 @@
+# This configuration file dictates the organization of the topic groups and
+# topics on the main page of the doc site for this branch. Each record
+# consists of the following:
+#
+# ---                                  <= Record delimiter
+# Name: Origin of the Species          <= Display name of topic group
+# Dir:  origin_of_the_species          <= Directory name of topic group
+# Topics:
+#   - Name: The Majestic Marmoset      <= Topic name
+#     File: the_majestic_marmoset      <= Topic file under group dir +/- .adoc
+#   - Name: The Curious Crocodile      <= Topic 2 name
+#     File: the_curious_crocodile      <= Topic 2 file
+#   - Name: The Numerous Nematodes     <= Sub-topic group name
+#     Dir: the_numerous_nematodes      <= Sub-topic group dir
+#     Topics:
+#       - Name: The Wily Worm          <= Sub-topic name
+#         File: the_wily_worm          <= Sub-topic file under <group dir>/<subtopic dir>
+#       - Name: The Acrobatic Ascarid  <= Sub-topic 2 name
+#         File: the_acrobatic_ascarid  <= Sub-topic 2 file under <group dir>/<subtopic dir>
+#
+# The ordering of the records in this document determines the ordering of the
+# topic groups and topics on the main page.
+
+---
+Name: Welcome
+Dir: welcome
+Distros: openshift-enterprise,openshift-origin,openshift-dedicated,openshift-online
+Topics:
+- Name: Welcome
+  File: index
+- Name: About OpenShift Container Engine
+  File: oce_about
+  Distros: openshift-enterprise
+- Name: Legal notice
+  File: legal-notice
+---
+Name: Getting started
+Dir: getting_started
+Distros: openshift-dedicated
+Topics:
+- Name: Accessing your services
+  File: accessing-your-services
+- Name: Scaling your cluster
+  File: scaling-your-cluster
+- Name: Deleting your cluster
+  File: deleting-your-cluster
+- Name: Networking
+  File: dedicated-networking
+---
+Name: Release notes
+Dir: release_notes
+Distros: openshift-enterprise
+Topics:
+- Name: OpenShift Container Platform 4.3 release notes
+  File: ocp-4-3-release-notes
+- Name: Versioning policy
+  File: versioning-policy
+---
+Name: Architecture
+Dir: architecture
+Distros: openshift-enterprise,openshift-origin,openshift-dedicated,openshift-online
+Topics:
+- Name: Product architecture
+  File: architecture
+- Name: Installation and update
+  Distros: openshift-enterprise,openshift-origin
+  File: architecture-installation
+- Name: The control plane
+  File: control-plane
+  Distros: openshift-enterprise,openshift-origin,openshift-dedicated,openshift-online
+- Name: Understanding OpenShift development
+  File: understanding-development
+- Name: Red Hat Enterprise Linux CoreOS
+  File: architecture-rhcos
+  Distros: openshift-enterprise,openshift-origin
+---
+Name: Administering a cluster
+Dir: administering_a_cluster
+Distros: openshift-dedicated
+Topics:
+- Name: The dedicated-admin role
+  File: dedicated-admin-role
+---
+Name: Installing
+Dir: installing
+Distros: openshift-origin,openshift-enterprise
+Topics:
+- Name: Installing on AWS
+  Dir: installing_aws
+  Topics:
+  - Name: Configuring an AWS account
+    File: installing-aws-account
+  - Name: Installing a cluster quickly on AWS
+    File: installing-aws-default
+  - Name: Installing a cluster on AWS with customizations
+    File: installing-aws-customizations
+  - Name: Installing a cluster on AWS with network customizations
+    File: installing-aws-network-customizations
+  - Name: Installing a cluster on AWS into an existing VPC
+    File: installing-aws-vpc
+  - Name: Uninstalling a cluster on AWS
+    File: uninstalling-cluster-aws
+- Name: Installing on Azure
+  Dir: installing_azure
+  Topics:
+  - Name: Configuring an Azure account
+    File: installing-azure-account
+  - Name: Installing a cluster quickly on Azure
+    File: installing-azure-default
+  - Name: Installing a cluster on Azure with customizations
+    File: installing-azure-customizations
+  - Name: Installing a cluster on Azure with network customizations
+    File: installing-azure-network-customizations
+  - Name: Installing a cluster on Azure into an existing VNet
+    File: installing-azure-vnet
+  - Name: Uninstalling a cluster on Azure
+    File: uninstalling-cluster-azure
+- Name: Installing on GCP
+  Dir: installing_gcp
+  Topics:
+  - Name: Configuring a GCP project
+    File: installing-gcp-account
+  - Name: Installing a cluster quickly on GCP
+    File: installing-gcp-default
+  - Name: Installing a cluster on GCP with customizations
+    File: installing-gcp-customizations
+  - Name: Installing a cluster on GCP with network customizations
+    File: installing-gcp-network-customizations
+  - Name: Installing a cluster on GCP into an existing VPC
+    File: installing-gcp-vpc
+  - Name: Uninstalling a cluster on GCP
+    File: uninstalling-cluster-gcp
+- Name: Installing on user-provisioned AWS
+  Dir: installing_aws_user_infra
+  Topics:
+  - Name: Installing a cluster on AWS using CloudFormation templates
+    File: installing-aws-user-infra
+- Name: Installing on user-provisioned GCP
+  Dir: installing_gcp_user_infra
+  Topics:
+  - Name: Installing a cluster on GCP using Deployment Manager templates
+    File: installing-gcp-user-infra
+- Name: Installing on bare metal
+  Dir: installing_bare_metal
+  Topics:
+  - Name: Installing a cluster on bare metal
+    File: installing-bare-metal
+  - Name: Installing a cluster on bare metal with network customizations
+    File: installing-bare-metal-network-customizations
+- Name: Installing on IBM Z
+  Dir: installing_ibm_z
+  Topics:
+  - Name: Installing a cluster on IBM Z
+    File: installing-ibm-z
+- Name: Installing on OpenStack
+  Dir: installing_openstack
+  Topics:
+#  - Name: Installing a cluster on OpenStack
+#    File: installing-openstack-installer
+  - Name: Installing a cluster on OpenStack with customizations
+    File: installing-openstack-installer-custom
+  - Name: Installing a cluster on OpenStack with Kuryr
+    File: installing-openstack-installer-kuryr
+  # - Name: Load balancing deployments on OpenStack
+  #   File: installing-openstack-load-balancing
+  - Name: Uninstalling a cluster on OpenStack
+    File: uninstalling-cluster-openstack
+- Name: Installing on vSphere
+  Dir: installing_vsphere
+  Topics:
+  - Name: Installing a cluster on vSphere
+    File: installing-vsphere
+  - Name: Installing a cluster on vSphere with network customizations
+    File: installing-vsphere-network-customizations
+- Name: Installing in restricted networks
+  Dir: installing_restricted_networks
+  Topics:
+  - Name: Creating a mirror registry for a restricted network
+    File: installing-restricted-networks-preparations
+  - Name: Restricted network AWS installation
+    File: installing-restricted-networks-aws
+  - Name: Restricted network bare metal installation
+    File: installing-restricted-networks-bare-metal
+#  - Name: Restricted network  GCP installation
+#    File: installing-restricted-networks-GCP
+  - Name: Restricted network vSphere installation
+    File: installing-restricted-networks-vsphere
+- Name: Gathering installation logs
+  File: installing-gather-logs
+- Name: FIPS compliant clusters
+  File: installing-fips
+- Name: Installation configuration
+  Dir: install_config
+  Topics:
+  - Name: Available cluster customizations
+    File: customizations
+    Distros: openshift-enterprise,openshift-origin
+  - Name: Configuring your firewall
+    File: configuring-firewall
+---
+Name: Updating clusters
+Dir: updating
+Distros: openshift-origin,openshift-enterprise
+Topics:
+- Name: Updating a cluster between minor versions
+  File: updating-cluster-between-minor
+- Name: Updating a cluster within a minor version from the web console
+  File: updating-cluster
+- Name: Updating a cluster within a minor version by using the CLI
+  File: updating-cluster-cli
+- Name: Updating a cluster that includes RHEL compute machines
+  File: updating-cluster-rhel-compute
+#- Name: Updating a disconnected cluster
+#  File: updating-disconnected-cluster
+# - Name: Troubleshooting an update
+#  File: updating-troubleshooting
+---
+Name: Support
+Dir: support
+Distros: openshift-enterprise,openshift-online,openshift-dedicated
+Topics:
+- Name: Getting support
+  File: getting-support
+- Name: Gathering data about your cluster
+  File: gathering-cluster-data
+  Distros: openshift-enterprise,openshift-dedicated
+- Name: Remote health monitoring with connected clusters
+  Dir: remote_health_monitoring
+  Distros: openshift-enterprise,openshift-dedicated
+  Topics:
+  - Name: About remote health monitoring
+    File: about-remote-health-monitoring
+  - Name: Showing data collected by remote health monitoring
+    File: showing-data-collected-by-remote-health-monitoring
+  - Name: Opting out of remote health reporting
+    File: opting-out-of-remote-health-reporting
+---
+Name: Web console
+Dir: web-console
+Distros: openshift-enterprise,openshift-origin,openshift-dedicated,openshift-online
+Topics:
+- Name: Accessing the web console
+  File: web-console
+- Name: Viewing cluster information
+  File: using-dashboard-to-get-cluster-information
+  Distros: openshift-enterprise,openshift-origin
+- Name: Configuring the web console
+  File: configuring-web-console
+  Distros: openshift-enterprise,openshift-origin
+- Name: Customizing the web console
+  File: customizing-the-web-console
+  Distros: openshift-enterprise,openshift-origin
+- Name: Developer perspective
+  File: odc-about-developer-perspective
+- Name: Disabling the web console
+  File: disabling-web-console
+  Distros: openshift-enterprise,openshift-origin
+
+---
+Name: Authentication
+Dir: authentication
+Distros: openshift-enterprise,openshift-origin,openshift-dedicated
+Topics:
+- Name: Understanding authentication
+  File: understanding-authentication
+  Distros: openshift-enterprise,openshift-origin,openshift-dedicated,openshift-online
+- Name: Understanding identity provider configuration
+  File: dedicated-understanding-authentication
+  Distros: openshift-dedicated
+- Name: Configuring the internal OAuth server
+  File: configuring-internal-oauth
+  Distros: openshift-enterprise,openshift-origin
+- Name: Understanding identity provider configuration
+  File: understanding-identity-provider
+  Distros: openshift-enterprise,openshift-origin
+- Name: Configuring identity providers
+  Dir: identity_providers
+  Topics:
+  - Name: Configuring an HTPasswd identity provider
+    File: configuring-htpasswd-identity-provider
+    Distros: openshift-enterprise,openshift-origin
+  - Name: Configuring a Keystone identity provider
+    File: configuring-keystone-identity-provider
+    Distros: openshift-enterprise,openshift-origin
+  - Name: Configuring an LDAP identity provider
+    File: configuring-ldap-identity-provider
+  - Name: Configuring a basic authentication identity provider
+    File: configuring-basic-authentication-identity-provider
+    Distros: openshift-enterprise,openshift-origin
+  - Name: Configuring a request header identity provider
+    File: configuring-request-header-identity-provider
+    Distros: openshift-enterprise,openshift-origin
+  - Name: Configuring a GitHub or GitHub Enterprise identity provider
+    File: configuring-github-identity-provider
+  - Name: Configuring a GitLab identity provider
+    File: configuring-gitlab-identity-provider
+    Distros: openshift-enterprise,openshift-origin
+  - Name: Configuring a Google identity provider
+    File: configuring-google-identity-provider
+  - Name: Configuring an OpenID Connect identity provider
+    File: configuring-oidc-identity-provider
+- Name: Configuring certificates
+  Dir: certificates
+  Distros: openshift-enterprise,openshift-origin
+  Topics:
+  - Name: Replacing the default ingress certificate
+    File: replacing-default-ingress-certificate
+  - Name: Adding API server certificates
+    File: api-server
+  - Name: Securing service traffic using service serving certificates
+    File: service-serving-certificate
+- Name: Using RBAC to define and apply permissions
+  File: using-rbac
+- Name: Removing the kubeadmin user
+  File: remove-kubeadmin
+  Distros: openshift-enterprise,openshift-origin
+#- Name: Configuring LDAP failover
+#  File: configuring-ldap-failover
+- Name: Configuring the user agent
+  File: configuring-user-agent
+  Distros: openshift-enterprise,openshift-origin
+- Name: Understanding and creating service accounts
+  File: understanding-and-creating-service-accounts
+- Name: Using service accounts in applications
+  File: using-service-accounts-in-applications
+- Name: Using a service account as an OAuth client
+  File: using-service-accounts-as-oauth-client
+- Name: Scoping tokens
+  File: tokens-scoping
+- Name: Managing Security Context Constraints
+  File: managing-security-context-constraints
+  Distros: openshift-enterprise,openshift-origin
+- Name: Impersonating the system:admin user
+  File: impersonating-system-admin
+  Distros: openshift-enterprise,openshift-origin
+- Name: Syncing LDAP groups
+  File: ldap-syncing
+  Distros: openshift-enterprise,openshift-origin
+- Name: Allowing JavaScript-based access to the API server from additional hosts
+  File: allowing-javascript-access-api-server
+  Distros: openshift-enterprise,openshift-origin
+- Name: Encrypting etcd data
+  File: encrypting-etcd
+  Distros: openshift-enterprise,openshift-origin
+---
+Name: Networking
+Dir: networking
+Distros: openshift-enterprise,openshift-origin,openshift-dedicated
+Topics:
+- Name: Understanding networking
+  File: understanding-networking
+- Name: Accessing hosts
+  File: accessing-hosts
+- Name: Understanding the Cluster Network Operator (CNO)
+  File: cluster-network-operator
+  Distros: openshift-enterprise,openshift-origin
+- Name: Understanding the DNS Operator
+  File: dns-operator
+  Distros: openshift-enterprise,openshift-origin
+- Name: Understanding the Ingress Operator
+  File: ingress-operator
+  Distros: openshift-enterprise,openshift-origin
+- Name: Configuring network policy
+  File: configuring-networkpolicy
+- Name: Multiple networks
+  Dir: multiple-networks
+  Distros: openshift-enterprise,openshift-origin
+  Topics:
+  - Name: Understanding multiple networks
+    File: understanding-multiple-networks
+  - Name: Attaching a Pod to an additional network
+    File: attaching-pod
+  - Name: Removing a Pod from an additional network
+    File: removing-pod
+  - Name: Configuring a bridge network
+    File: configuring-bridge
+  - Name: Configuring a macvlan network
+    File: configuring-macvlan
+  - Name: Configuring an ipvlan network
+    File: configuring-ipvlan
+  - Name: Configuring a host-device network
+    File: configuring-host-device
+  - Name: Configuring SR-IOV
+    File: configuring-sr-iov
+  - Name: Editing an additional network
+    File: edit-additional-network
+  - Name: Removing an additional network
+    File: remove-additional-network
+- Name: OpenShift SDN
+  Dir: openshift-sdn
+  Topics:
+  - Name: About OpenShift SDN
+    File: about-openshift-sdn
+  - Name: Enabling egress IPs for a project
+    File: assigning-egress-ips
+    Distros: openshift-origin,openshift-enterprise
+  - Name: Using multicast
+    File: using-multicast
+    Distros: openshift-origin,openshift-enterprise
+  - Name: Configuring multitenant isolation
+    File: multitenant-isolation
+    Distros: openshift-origin,openshift-enterprise
+  - Name: Configuring kube-proxy
+    File: configuring-kube-proxy
+    Distros: openshift-enterprise,openshift-origin
+- Name: Configuring Routes
+  Dir: routes
+  Topics:
+  - Name: Route configuration
+    File: route-configuration
+  - Name: Secured routes
+    File: secured-routes
+- Name: Configuring ingress cluster traffic
+  Dir: configuring-ingress-cluster-traffic
+  Topics:
+  - Name: Overview
+    File: overview-traffic
+    Distros: openshift-enterprise,openshift-origin
+  - Name: Configuring ingress cluster traffic using an Ingress Controller
+    File: configuring-ingress-cluster-traffic-ingress-controller
+  - Name: Configuring ingress cluster traffic using a load balancer
+    File: configuring-ingress-cluster-traffic-load-balancer
+    Distros: openshift-enterprise,openshift-origin
+  - Name: Configuring ingress cluster traffic using a service external IP
+    File: configuring-ingress-cluster-traffic-service-external-ip
+    Distros: openshift-enterprise,openshift-origin
+  - Name: Configuring ingress cluster traffic using a NodePort
+    File: configuring-ingress-cluster-traffic-nodeport
+    Distros: openshift-enterprise,openshift-origin
+- Name: Configuring the cluster-wide proxy
+  File: enable-cluster-wide-proxy
+  Distros: openshift-enterprise,openshift-origin
+- Name: Configuring a custom PKI
+  File: configuring-a-custom-pki
+  Distros: openshift-enterprise,openshift-origin
+---
+Name: Storage
+Dir: storage
+Distros: openshift-enterprise,openshift-origin,openshift-dedicated,openshift-online
+Topics:
+- Name: Understanding persistent storage
+  File: understanding-persistent-storage
+  Distros: openshift-enterprise,openshift-origin,openshift-dedicated,openshift-online
+- Name: Configuring persistent storage
+  Dir: persistent-storage
+  Distros: openshift-enterprise,openshift-origin
+  Topics:
+  - Name: Persistent storage using Amazon EFS
+    File: persistent-storage-efs
+  - Name: Persistent storage using AWS Elastic Block Store
+    File: persistent-storage-aws
+  - Name: Persistent storage using Azure Disk
+    File: persistent-storage-azure
+  - Name: Persistent storage using Azure File
+    File: persistent-storage-azure-file
+  - Name: Persistent storage using Cinder
+    File: persistent-storage-cinder
+  - Name: Persistent storage using Container Storage Interface (CSI)
+    File: persistent-storage-csi
+  - Name: Persistent storage using Fibre Channel
+    File: persistent-storage-fibre
+  - Name: Persistent storage using GCE Persistent Disk
+    File: persistent-storage-gce
+  - Name: Persistent storage using hostPath
+    File: persistent-storage-hostpath
+  - Name: Persistent Storage using iSCSI
+    File: persistent-storage-iscsi
+  - Name: Persistent storage using local volumes
+    File: persistent-storage-local
+  - Name: Persistent storage using NFS
+    File: persistent-storage-nfs
+#  - Name: Persistent storage using OpenStack Manila
+#    File: persistent-storage-manila
+  - Name: Persistent storage using VMware vSphere
+    File: persistent-storage-vsphere
+- Name: Expanding persistent volumes
+  File: expanding-persistent-volumes
+  Distros: openshift-enterprise,openshift-origin
+- Name: Dynamic provisioning
+  File: dynamic-provisioning
+  Distros: openshift-enterprise,openshift-origin
+---
+Name: Registry
+Dir: registry
+Distros: openshift-enterprise,openshift-origin,openshift-dedicated
+Topics:
+- Name: Overview
+  File: architecture-component-imageregistry
+- Name: Image Registry Operator in Openshift Container Platform
+  File: configuring-registry-operator
+  Distros: openshift-enterprise,openshift-origin
+- Name: Setting up and configuring the registry
+  Dir: configuring-registry-storage
+  Distros: openshift-enterprise,openshift-origin
+  Topics:
+  - Name: Configuring the registry for AWS user-provisioned infrastructure
+    File: configuring-registry-storage-aws-user-infrastructure
+  - Name: Configuring the registry for GCP user-provisioned infrastructure
+    File: configuring-registry-storage-gcp-user-infrastructure
+#  - Name: Configuring the registry for OpenStack user-provisioned infrastructure
+#    File: configuring-registry-storage-openstack-user-infrastructure
+#  - Name: Configuring the registry for Azure user-provisioned infrastructure
+#    File: configuring-registry-storage-azure-user-infrastructure
+  - Name: Configuring the registry for bare metal
+    File: configuring-registry-storage-baremetal
+  - Name: Configuring the registry for vSphere
+    File: configuring-registry-storage-vsphere
+- Name: Registry options
+  File: registry-options
+  Distros: openshift-enterprise,openshift-origin
+- Name: Accessing the registry
+  File: accessing-the-registry
+- Name: Exposing the registry
+  File: securing-exposing-registry
+  Distros: openshift-enterprise,openshift-origin
+---
+Name: Operators
+Dir: operators
+Topics:
+- Name: Understanding Operators
+  File: olm-what-operators-are
+- Name: Understanding the Operator Lifecycle Manager (OLM)
+  Dir: understanding-olm
+  Distros: openshift-enterprise,openshift-origin
+  Topics:
+  - Name: Workflow and architecture
+    File: olm-understanding-olm
+  - Name: Dependency resolution
+    File: olm-understanding-dependency-resolution
+  - Name: OperatorGroups
+    File: olm-understanding-operatorgroups
+- Name: Understanding the OperatorHub
+  Distros: openshift-enterprise,openshift-origin
+  File: olm-understanding-operatorhub
+- Name: Adding Operators to a cluster
+  File: olm-adding-operators-to-cluster
+  Distros: openshift-enterprise,openshift-origin,openshift-dedicated
+- Name: Deleting Operators from a cluster
+  File: olm-deleting-operators-from-cluster
+  Distros: openshift-enterprise,openshift-origin,openshift-dedicated
+- Name: Creating applications from installed Operators
+  File: olm-creating-apps-from-installed-operators
+  Distros: openshift-enterprise,openshift-origin,openshift-dedicated
+- Name: Viewing Operator status
+  File: olm-status
+  Distros: openshift-enterprise,openshift-origin,openshift-dedicated
+- Name: Creating policy for Operator installations and upgrades
+  File: olm-creating-policy
+  Distros: openshift-origin,openshift-enterprise
+- Name: Configuring OLM for restricted networks
+  File: olm-restricted-networks
+  Distros: openshift-origin,openshift-enterprise
+- Name: CRDs
+  Dir: crds
+  Topics:
+  - Name: Extending the Kubernetes API with CRDs
+    File: crd-extending-api-with-crds
+    Distros: openshift-origin,openshift-enterprise
+  - Name: Managing resources from CRDs
+    File: crd-managing-resources-from-crds
+    Distros: openshift-origin,openshift-enterprise
+- Name: Operator SDK
+  Dir: operator_sdk
+  Distros: openshift-origin,openshift-enterprise
+  Topics:
+  - Name: Getting started with the Operator SDK
+    File: osdk-getting-started
+  - Name: Creating Ansible-based Operators
+    File: osdk-ansible
+  - Name: Creating Helm-based Operators
+    File: osdk-helm
+  - Name: Generating a ClusterServiceVersion (CSV)
+    File: osdk-generating-csvs
+  - Name: Configuring built-in monitoring with Prometheus
+    File: osdk-monitoring-prometheus
+  - Name: Configuring leader election
+    File: osdk-leader-election
+  - Name: Operator SDK CLI reference
+    File: osdk-cli-reference
+  - Name: Migrating to Operator SDK v0.1.0
+    File: osdk-migrating-to-v0-1-0
+    Distros: openshift-origin
+  - Name: Appendices
+    File: osdk-appendices
+---
+Name: Builds
+Dir: builds
+Distros: openshift-enterprise,openshift-origin,openshift-dedicated,openshift-online
+Topics:
+- Name: Understanding image builds
+  File: understanding-image-builds
+- Name: Understanding build configurations
+  File: understanding-buildconfigs
+- Name: Creating build inputs
+  File: creating-build-inputs
+- Name: Managing build output
+  File: managing-build-output
+- Name: Using build strategies
+  File: build-strategies
+#- Name: OpenShift Pipelines
+#  Dir: openshift_piplines
+#  Distros: openshift-enterprise,openshift-origin
+- Name: Custom image builds with Buildah
+  File: custom-builds-buildah
+  Distros: openshift-enterprise,openshift-origin
+- Name: Performing basic builds
+  File: basic-build-operations
+  Distros: openshift-enterprise,openshift-origin,openshift-dedicated,openshift-online
+- Name: Triggering and modifying builds
+  File: triggering-builds-build-hooks
+  Distros: openshift-enterprise,openshift-origin,openshift-dedicated,openshift-online
+- Name: Performing advanced builds
+  File: advanced-build-operations
+  Distros: openshift-enterprise,openshift-origin
+- Name: Using Red Hat subscriptions in builds
+  File: running-entitled-builds
+  Distros: openshift-enterprise,openshift-origin
+- Name: Securing builds by strategy
+  File: securing-builds-by-strategy
+  Distros: openshift-enterprise,openshift-origin
+- Name: Build configuration resources
+  File: build-configuration
+  Distros: openshift-enterprise,openshift-origin
+- Name: Troubleshooting builds
+  File: troubleshooting-builds
+  Distros: openshift-enterprise,openshift-origin
+- Name: Setting up additional trusted certificate authorities for builds
+  File: setting-up-trusted-ca
+  Distros: openshift-enterprise,openshift-origin
+---
+Name: Images
+Dir: openshift_images
+Distros: openshift-enterprise,openshift-origin,openshift-dedicated,openshift-online
+Topics:
+- Name: Configuring the Samples Operator
+  File: configuring-samples-operator
+  Distros: openshift-enterprise,openshift-origin
+- Name: Understanding containers, images, and imagestreams
+  File: images-understand
+- Name: Creating images
+  File: create-images
+- Name: Managing images
+  Dir: managing-images
+  Topics:
+  - Name: Managing images overview
+    File: managing-images-overview
+  - Name: Tagging images
+    File: tagging-images
+  - Name: Image pull policy
+    File: image-pull-policy
+  - Name: Using image pull secrets
+    File: using-image-pull-secrets
+- Name: Managing imagestreams
+  File: image-streams-manage
+  Distros: openshift-enterprise,openshift-origin
+- Name: Image configuration resources
+  File: image-configuration
+  Distros: openshift-enterprise,openshift-origin
+- Name: Using templates
+  File: using-templates
+- Name: Using Ruby on Rails
+  File: templates-using-ruby-on-rails
+- Name: Using images
+  Dir: using_images
+  Distros: openshift-enterprise,openshift-origin
+  Topics:
+  - Name: Using images overview
+    File: using-images-overview
+  - Name: Configuring Jenkins images
+    File: images-other-jenkins
+  - Name: Jenkins agent
+    File: images-other-jenkins-agent
+---
+Name: Applications
+Dir: applications
+Distros: openshift-*
+Topics:
+- Name: Projects
+  Dir: projects
+  Topics:
+  - Name: Working with projects
+    File: working-with-projects
+  - Name: Creating a project as another user
+    File: creating-project-other-user
+    Distros: openshift-enterprise,openshift-origin
+  - Name: Configuring project creation
+    File: configuring-project-creation
+    Distros: openshift-enterprise,openshift-origin
+- Name:  Application life cycle management
+  Dir: application-life-cycle-management
+  Topics:
+  - Name: Creating applications using the Developer perspective
+    File: odc-creating-applications-using-developer-perspective
+  - Name: Creating applications from installed Operators
+    File: creating-apps-from-installed-operators
+  - Name: Creating applications using the CLI
+    File: creating-applications-using-cli
+  - Name: Viewing application composition using the Topology view
+    File: odc-viewing-application-composition-using-topology-view
+  - Name: Deleting applications
+    File: odc-deleting-applications
+- Name: Service brokers
+  Dir: service_brokers
+  Distros: openshift-enterprise,openshift-origin
+  Topics:
+  - Name: Installing the service catalog
+    File: installing-service-catalog
+  - Name: Installing the Template service Broker
+    File: installing-template-service-broker
+  - Name: Provisioning template applications
+    File: provisioning-template-application
+  - Name: Uninstalling the Template Service Broker
+    File: uninstalling-template-service-broker
+  - Name: Installing the OpenShift Ansible Broker
+    File: installing-ansible-service-broker
+  - Name: Configuring the OpenShift Ansible Broker
+    File: configuring-ansible-service-broker
+  - Name: Provisioning service bundles
+    File: provisioning-service-bundle
+  - Name: Uninstalling the OpenShift Ansible Broker
+    File: uninstalling-ansible-service-broker
+- Name: Deployments
+  Dir: deployments
+  Topics:
+  - Name: Understanding Deployments and DeploymentConfigs
+    File: what-deployments-are
+  - Name: Managing deployment processes
+    File: managing-deployment-processes
+  - Name: Using DeploymentConfig strategies
+    File: deployment-strategies
+  - Name: Using route-based deployment strategies
+    File: route-based-deployment-strategies
+- Name: Quotas
+  Dir: quotas
+  Distros: openshift-origin,openshift-enterprise
+  Topics:
+  - Name: Resource quotas per project
+    File: quotas-setting-per-project
+  - Name: Resource quotas across multiple projects
+    File: quotas-setting-across-multiple-projects
+    Distros: openshift-enterprise,openshift-origin
+- Name: Working with quotas
+  File: working-with-quotas
+  Distros: openshift-online,openshift-dedicated
+- Name: Idling applications
+  File: idling-applications
+  Distros: openshift-origin,openshift-enterprise
+- Name: Pruning objects to reclaim resources
+  File: pruning-objects
+  Distros: openshift-origin,openshift-enterprise
+---
+Name: Machine management
+Dir: machine_management
+Distros: openshift-origin,openshift-enterprise
+Topics:
+- Name: Creating MachineSets
+  Dir: creating_machinesets
+  Distros: openshift-origin,openshift-enterprise
+  Topics:
+  - Name: Creating a MachineSet on AWS
+    File: creating-machineset-aws
+  - Name: Creating a MachineSet on Azure
+    File: creating-machineset-azure
+  - Name: Creating a MachineSet on GCP
+    File: creating-machineset-gcp
+- Name: Manually scaling a MachineSet
+  File: manually-scaling-machineset
+- Name: Modifying a MachineSet
+  File: modifying-machineset
+- Name: Applying autoscaling to a cluster
+  File: applying-autoscaling
+- Name: Creating infrastructure MachineSets
+  File: creating-infrastructure-machinesets
+- Name: Adding a RHEL compute machine
+  File: adding-rhel-compute
+- Name: Adding more RHEL compute machines
+  File: more-rhel-compute
+- Name: Deploying machine health checks
+  File: deploying-machine-health-checks
+---
+Name: Nodes
+Dir: nodes
+Distros: openshift-*
+Topics:
+- Name: Working with pods
+  Dir: pods
+  Topics:
+  - Name: About Pods
+    File: nodes-pods-using
+  - Name: Viewing Pods
+    File: nodes-pods-viewing
+  - Name: Configuring a cluster for Pods
+    File: nodes-pods-configuring
+    Distros: openshift-enterprise,openshift-origin
+  - Name: Automatically scaling pods
+    File: nodes-pods-autoscaling
+  - Name: Providing sensitive data to Pods
+    File: nodes-pods-secrets
+  - Name: Using Device Manager to make devices available to nodes
+    File: nodes-pods-plugins
+    Distros: openshift-enterprise,openshift-origin
+  - Name: Including pod priority in Pod scheduling decisions
+    File: nodes-pods-priority
+    Distros: openshift-enterprise,openshift-origin
+  - Name: Placing pods on specific nodes using node selectors
+    File: nodes-pods-node-selectors
+    Distros: openshift-enterprise,openshift-origin
+- Name: Controlling pod placement onto nodes (scheduling)
+  Dir: scheduling
+  Distros: openshift-enterprise,openshift-origin
+  Topics:
+  - Name: About pod placement using the scheduler
+    File: nodes-scheduler-about
+  - Name: Configuring the default scheduler to control pod placement
+    File: nodes-scheduler-default
+  - Name: Placing pods relative to other pods using pod affinity and anti-affinity rules
+    File: nodes-scheduler-pod-affinity
+  - Name: Controlling pod placement on nodes using node affinity rules
+    File: nodes-scheduler-node-affinity
+  - Name: Placing pods onto overcommited nodes
+    File: nodes-scheduler-overcommit
+  - Name: Controlling pod placement using node taints
+    File: nodes-scheduler-taints-tolerations
+  - Name: Placing pods on specific nodes using node selectors
+    File: nodes-scheduler-node-selectors
+# - Name: Placing a pod on a specific node by name
+#   File: nodes-scheduler-node-names
+# - Name: Placing a pod in a specific project
+#   File: nodes-scheduler-node-projects
+# - Name: Keeping your cluster balanced using the descheduler
+#   File: nodes-scheduler-descheduler
+- Name: Using Jobs and DaemonSets
+  Dir: jobs
+  Topics:
+  - Name: Running background tasks on nodes automatically with daemonsets
+    File: nodes-pods-daemonsets
+    Distros: openshift-enterprise,openshift-origin
+  - Name: Running tasks in pods using jobs
+    File: nodes-nodes-jobs
+- Name: Working with nodes
+  Dir: nodes
+  Distros: openshift-enterprise,openshift-origin
+  Topics:
+  - Name: Viewing and listing the nodes in your cluster
+    File: nodes-nodes-viewing
+  - Name: Working with nodes
+    File: nodes-nodes-working
+  - Name: Managing Nodes
+    File: nodes-nodes-managing
+  - Name: Managing the maximum number of Pods per Node
+    File: nodes-nodes-managing-max-pods
+  - Name: Using the Node Tuning Operator
+    File: nodes-node-tuning-operator
+  - Name: Understanding node rebooting
+    File: nodes-nodes-rebooting
+  - Name: Freeing node resources using garbage collection
+    File: nodes-nodes-garbage-collection
+  - Name: Allocating resources for nodes
+    File: nodes-nodes-resources-configuring
+  - Name: Advertising hidden resources for nodes
+    File: nodes-nodes-opaque-resources
+#  - Name: Monitoring for problems in your nodes
+#    File: nodes-nodes-problem-detector
+  - Name: Viewing node audit logs
+    File: nodes-nodes-audit-log
+- Name: Working with containers
+  Dir: containers
+  Topics:
+  - Name: Using containers
+    File: nodes-containers-using
+  - Name: Using Init Containers to perform tasks before a pod is deployed
+    File: nodes-containers-init
+    Distros: openshift-enterprise,openshift-origin
+  - Name: Using volumes to persist container data
+    File: nodes-containers-volumes
+  - Name: Mapping volumes using projected volumes
+    File: nodes-containers-projected-volumes
+  - Name: Allowing containers to consume API objects
+    File: nodes-containers-downward-api
+  - Name: Copying files to or from a container
+    File: nodes-containers-copying-files
+  - Name: Executing remote commands in a container
+    File: nodes-containers-remote-commands
+  - Name: Using port forwarding to access applications in a container
+    File: nodes-containers-port-forwarding
+  - Name: Using sysctls in containers
+    File: nodes-containers-sysctls
+  - Name: Monitoring container health
+    File: nodes-containers-health
+- Name: Working with clusters
+  Dir: clusters
+  Topics:
+  - Name: Viewing system event information in a cluster
+    File: nodes-containers-events
+  - Name: Analyzing cluster resource levels
+    File: nodes-cluster-resource-levels
+    Distros: openshift-enterprise,openshift-origin
+  - Name: Configuring cluster memory to meet container memory and risk requirements
+    File: nodes-cluster-resource-configure
+    Distros: openshift-enterprise,openshift-origin
+  - Name: Configuring your cluster to place pods on overcommited nodes
+    File: nodes-cluster-overcommit
+    Distros: openshift-enterprise,openshift-origin
+  - Name: Enabling features using FeatureGates
+    File: nodes-cluster-enabling-features
+    Distros: openshift-enterprise,openshift-origin
+---
+Name: Logging
+Dir: logging
+Distros: openshift-enterprise,openshift-origin,openshift-dedicated
+Topics:
+- Name: About cluster logging
+  File: cluster-logging
+- Name: About deploying cluster logging
+  File: cluster-logging-deploying-about
+  Distros: openshift-enterprise,openshift-origin
+- Name: Deploying cluster logging
+  File: cluster-logging-deploying
+  Distros: openshift-enterprise,openshift-origin
+- Name: Deploying cluster logging
+  File: dedicated-cluster-deploying
+  Distros: openshift-dedicated
+- Name: Upgrading cluster logging
+  File: cluster-logging-upgrading
+- Name: Deploying and Configuring the Event Router
+  File: cluster-logging-eventrouter
+  Distros: openshift-enterprise,openshift-origin
+- Name: Viewing cluster logs
+  File: cluster-logging-viewing
+  Distros: openshift-enterprise,openshift-origin
+- Name: Configuring your cluster logging deployment
+  Dir: config
+  Distros: openshift-enterprise,openshift-origin
+  Topics:
+  - Name: About configuring cluster logging
+    File: cluster-logging-configuring-about
+  - Name: Changing cluster logging management state
+    File: cluster-logging-management
+  - Name: Configuring cluster logging
+    File: cluster-logging-configuring
+  - Name: Configuring Elasticsearch
+    File: cluster-logging-elasticsearch
+  - Name: Configuring Kibana
+    File: cluster-logging-kibana
+  - Name: Configuring Curator
+    File: cluster-logging-curator
+  - Name: Configuring the logging collector
+    File: cluster-logging-collector
+  - Name: Using tolerations to control cluster logging pod placement
+    File: cluster-logging-tolerations
+  - Name: Sending logs to external devices
+    File: cluster-logging-external
+- Name: Viewing Elasticsearch status
+  File: cluster-logging-elasticsearch-status
+  Distros: openshift-enterprise,openshift-origin
+- Name: Viewing cluster logging status
+  File: cluster-logging-cluster-status
+  Distros: openshift-enterprise,openshift-origin
+- Name: Moving the cluster logging resources with node selectors
+  File: cluster-logging-moving-nodes
+  Distros: openshift-enterprise,openshift-origin
+- Name: Manually rolling out Elasticsearch
+  File: cluster-logging-manual-rollout
+  Distros: openshift-enterprise,openshift-origin
+- Name: Troubleshooting Kibana
+  File: cluster-logging-troubleshooting
+  Distros: openshift-enterprise,openshift-origin
+- Name: Exported fields
+  File: cluster-logging-exported-fields
+  Distros: openshift-enterprise,openshift-origin
+- Name: Uninstalling cluster logging
+  File: cluster-logging-uninstall
+---
+Name: Monitoring
+Dir: monitoring
+Distros: openshift-enterprise,openshift-origin
+Topics:
+- Name: Cluster monitoring
+  Dir: cluster-monitoring
+  Topics:
+  - Name: About cluster monitoring
+    File: about-cluster-monitoring
+  - Name: Configuring the monitoring stack
+    File: configuring-the-monitoring-stack
+  - Name: Managing cluster alerts
+    File: managing-cluster-alerts
+  - Name: Examining cluster metrics
+    File: examining-cluster-metrics
+  - Name: Accessing Prometheus, Alertmanager, and Grafana
+    File: prometheus-alertmanager-and-grafana
+- Name: Exposing custom application metrics for autoscaling
+  File: exposing-custom-application-metrics-for-autoscaling
+---
+Name: Metering
+Dir: metering
+Distros: openshift-enterprise,openshift-origin
+Topics:
+- Name: About metering
+  File: metering-about-metering
+- Name: About installing metering
+  File: metering-about-installing-metering
+- Name: Installing metering
+  File: metering-installing-metering
+- Name: Configuring metering
+  Dir: configuring-metering
+  Topics:
+  - Name: About configuring metering
+    File: metering-about-configuring
+  - Name: Common configuration options
+    File: metering-common-config-options
+  - Name: Configuring persistent storage
+    File: metering-configure-persistent-storage
+  - Name: Configuring the Hive metastore
+    File: metering-configure-hive-metastore
+  - Name: Configuring the reporting operator
+    File: metering-configure-reporting-operator
+  - Name: Configuring AWS billing correlation
+    File: metering-configure-aws-billing-correlation
+- Name: Reports
+  Dir: reports
+  Topics:
+  - Name: About reports
+    File: metering-about-reports
+  - Name: Storage Locations
+    File: metering-storage-locations
+- Name: Using metering
+  File: metering-using-metering
+- Name: Examples of using metering
+  File: metering-usage-examples
+- Name: Troubleshooting and debugging
+  File: metering-troubleshooting-debugging
+---
+Name: Scalability and performance
+Dir: scalability_and_performance
+Distros: openshift-origin,openshift-enterprise
+Topics:
+- Name: Recommended host practices
+  File: recommended-host-practices
+- Name: Using the Node Tuning Operator
+  File: using-node-tuning-operator
+- Name: Using Cluster Loader
+  File: using-cluster-loader
+- Name: Using CPU Manager
+  File: using-cpu-manager
+- Name: Using Topology Manager
+  File: using-topology-manager
+- Name: Scaling the Cluster Monitoring Operator
+  File: scaling-cluster-monitoring-operator
+- Name: Planning your environment according to object maximums
+  File: planning-your-environment-according-to-object-maximums
+- Name: Optimizing storage
+  File: optimizing-storage
+- Name: Optimizing routing
+  File: routing-optimization
+- Name: What huge pages do and how they are consumed by apps
+  File: what-huge-pages-do-and-how-they-are-consumed-by-apps
+---
+Name: Backup and restore
+Dir: backup_and_restore
+Distros: openshift-origin,openshift-enterprise
+Topics:
+- Name: Backing up etcd data
+  File: backing-up-etcd
+- Name: Replacing a failed master host
+  File: replacing-failed-master
+- Name: Disaster recovery
+  Dir: disaster_recovery
+  Topics:
+  - Name: About disaster recovery
+    File: about-disaster-recovery
+  - Name: Recovering from lost master hosts
+    File: scenario-1-infra-recovery
+  - Name: Restoring to a previous cluster state
+    File: scenario-2-restoring-cluster-state
+  - Name: Recovering from expired control plane certificates
+    File: scenario-3-expired-certs
+---
+Name: Migration
+Dir: migration
+Distros: openshift-enterprise
+Topics:
+- Name: Migrating OpenShift Container Platform 3 to 4
+  Dir: migrating-3-4
+  Topics:
+  - Name: About migrating OpenShift Container Platform 3 to 4
+    File: about-migration
+  - Name: Planning your OpenShift Container Platform 3 to 4 migration
+    File: planning-migration-3-to-4
+  - Name: Migrating OpenShift Container Platform 3.7 to 4.2
+    File: migrating-openshift-3-to-4
+- Name: Migrating OpenShift Container Platform 4.x to 4.x
+  Dir: migrating-4-4
+  Topics:
+  - Name: Migrating OpenShift Container Platform 4.1 to 4.2
+    File: migrating-openshift-4_1-to-4
+  - Name: Migrating between OpenShift Container Platform 4.2 clusters
+    File: migrating-openshift-4_2-to-4
+---
+Name: CLI tools
+Dir: cli_reference
+Distros: openshift-enterprise,openshift-origin,openshift-dedicated,openshift-online
+Topics:
+- Name: OpenShift CLI (oc)
+  Dir: openshift_cli
+  Topics:
+  - Name: Getting started with the CLI
+    File: getting-started-cli
+  - Name: Configuring the CLI
+    File: configuring-cli
+  - Name: Extending the CLI with plug-ins
+    File: extending-cli-plugins
+    Distros: openshift-enterprise,openshift-origin
+  - Name: Developer CLI commands
+    File: developer-cli-commands
+  - Name: Administrator CLI commands
+    File: administrator-cli-commands
+    Distros: openshift-enterprise,openshift-origin
+  - Name: Usage of oc and kubectl commands
+    File: usage-oc-kubectl
+- Name: OpenShift Do developer CLI (odo)
+  Dir: openshift_developer_cli
+  Distros: openshift-enterprise,openshift-online,openshift-dedicated,openshift-online
+  Topics:
+  - Name: Understanding odo
+    File: understanding-odo
+  - Name: odo architecture
+    File: odo-architecture
+  - Name: Installing odo
+    File: installing-odo
+  - Name: Creating a single-component application with odo
+    File: creating-a-single-component-application-with-odo
+  - Name: Creating a multicomponent application with odo
+    File: creating-a-multicomponent-application-with-odo
+  - Name: Creating an application with a database
+    File: creating-an-application-with-a-database
+  - Name: Managing environment variables in odo
+    File: managing-environment-variables-in-odo
+  - Name: Configuring the odo CLI
+    File: configuring-the-odo-cli
+  - Name: odo CLI reference
+    File: odo-cli-reference
+  - Name: odo release notes
+    File: odo-release-notes
+- Name: Helm CLI
+  Dir: helm-cli
+  Distros: openshift-enterprise
+  Topics:
+  - Name: Getting started with Helm on OpenShift Container Platform
+    File: getting-started-with-helm-on-openshift-container-platform
+---
+Name: Service Mesh
+Dir: service_mesh
+Distros: openshift-enterprise
+Topics:
+- Name: Service Mesh Architecture
+  Dir: service_mesh_arch
+  Topics:
+  - Name: Understanding service mesh
+    File: understanding-ossm
+  - Name: Understanding Kiali
+    File: ossm-kiali
+  - Name: Understanding Jaeger
+    File: ossm-jaeger
+  - Name: Comparing service mesh and Istio
+    File: ossm-vs-community
+- Name: Service Mesh Installation
+  Dir: service_mesh_install
+  Topics:
+  - Name: Preparing to install service mesh
+    File: preparing-ossm-installation
+  - Name: Installing service mesh
+    File: installing-ossm
+  - Name: Customizing the installation
+    File: customizing-installation-ossm
+  - Name: Updating service mesh
+    File: updating-ossm
+  - Name: Removing service mesh
+    File: removing-ossm
+
+- Name: Day Two
+  Dir: service_mesh_day_two
+  Topics:
+  - Name: Deploying applications on service mesh
+    File: prepare-to-deploy-applications-ossm
+  - Name: Configuring Jaeger
+    File: configuring-jaeger
+  - Name: Example application
+    File: ossm-example-bookinfo
+  - Name: Kiali tutorial
+    File: ossm-tutorial-kiali
+  - Name: Distributed tracing tutorial
+    File: ossm-tutorial-jaeger-tracing
+#  - Name: Grafana tutorial
+#    File: ossm-tutorial-grafana
+#  - Name: Prometheus tutorial
+#    File: ossm-tutorial-prometheus
+- Name: 3scale adapter
+  Dir: threescale_adapter
+  Topics:
+  - Name: Using the 3scale Istio adapter
+    File: threescale-adapter
+- Name: Service Mesh Release Notes
+  File: servicemesh-release-notes
+---
+Name: Container-native virtualization
+Dir: cnv
+Distros: openshift-enterprise
+Topics:
+- Name: Container-native virtualization installation
+  Dir: cnv_install
+  Topics:
+  - Name: About container-native virtualization
+    File: cnv-about-cnv
+  - Name: Preparing your OpenShift cluster for container-native virtualization
+    File: preparing-cluster-for-cnv
+  - Name: Installing container-native virtualization
+    File: installing-container-native-virtualization
+  - Name: Installing the `virtctl` client
+    File: cnv-installing-virtctl
+  - Name: Upgrading container-native virtualization
+    File: upgrading-container-native-virtualization
+  - Name: Uninstalling container-native virtualization
+    File: uninstalling-container-native-virtualization
+- Name: Container-native virtualization user's guide
+  Dir: cnv_users_guide
+  Topics:
+#### VIRTUAL MACHINE CHESS SALAD (silly name to highlight that the commented out assemblies need to be checked against merged filenams)
+  - Name: Creating virtual machines
+    File: cnv-create-vms
+# Importing virtual machines
+  - Name: TLS certificates for DataVolume imports
+    File: cnv-tls-certificates-for-dv-imports
+  - Name: Importing virtual machine images with DataVolumes
+    File: cnv-importing-virtual-machine-images-datavolumes
+  - Name: Importing a VMware virtual machine or template
+    File: cnv-importing-vmware-vm
+# VM CHESS SALAD cont'd
+  - Name: Editing virtual machines
+    File: cnv-edit-vms
+  - Name: Deleting virtual machines
+    File: cnv-delete-vms
+  - Name: Controlling virtual machines states
+    File: cnv-controlling-vm-states
+  - Name: Accessing virtual machine consoles
+    File: cnv-accessing-vm-consoles
+  - Name: Using the CLI tools
+    File: cnv-using-the-cli-tools
+# Automating management tasks
+  - Name: Automating management tasks
+    File: cnv-automating-management-tasks
+# Virtual machine networking
+  - Name: Using the default Pod network with container-native virtualization
+    File: cnv-using-the-default-pod-network-with-cnv
+  - Name: Attaching a virtual machine to multiple networks
+    File: cnv-attaching-vm-multiple-networks
+  - Name: Installing the QEMU guest agent on virtual machines
+    File: cnv-installing-qemu-guest-agent
+  - Name: Viewing the IP address of vNICs on a virtual machine
+    File: cnv-viewing-ip-of-vm-vnic
+# Advanced virtual machine configuration
+  - Name: Configuring PXE booting for virtual machines
+    File: cnv-configuring-pxe-booting
+  - Name: Managing guest memory
+    File: cnv-managing-guest-memory
+# Templates
+  - Name: Creating virtual machine templates
+    File: cnv-creating-vm-template
+  - Name: Editing a virtual machine template
+    File: cnv-editing-vm-template
+  - Name: Deleting a virtual machine template
+    File: cnv-deleting-vm-template
+# Cloning virtual machines
+  - Name: Cloning a virtual machine disk into a new DataVolume
+    File: cnv-cloning-vm-disk-into-new-datavolume
+  - Name: Cloning a virtual machine by using a DataVolumeTemplate
+    File: cnv-cloning-vm-using-datavolumetemplate
+# A BETTER NAME THAN 'STORAGE 4 U'
+  - Name: Uploading local disk images by using the virtctl tool
+    File: cnv-uploading-local-disk-images-virtctl
+  - Name: Uploading a local disk image to a block storage DataVolume
+    File: cnv-uploading-local-disk-images-block
+  - Name: Expanding virtual storage by adding blank disk images
+    File: cnv-expanding-virtual-storage-with-blank-disk-images
+  - Name: Preparing CDI scratch space
+    File: cnv-preparing-cdi-scratch-space
+  - Name: Importing virtual machine images to block storage with DataVolumes
+    File: cnv-importing-virtual-machine-images-datavolumes-block
+  - Name: Cloning a virtual machine disk into a new block storage DataVolume
+    File: cnv-cloning-vm-disk-into-new-datavolume-block
+# Virtual machine live migration
+  - Name: Virtual machine live migration
+    File: cnv-live-migration
+  - Name: Live migration limits and timeouts
+    File: cnv-live-migration-limits
+  - Name: Migrating a virtual machine instance to another node
+    File: cnv-migrate-vmi
+  - Name: Monitoring live migration of a virtual machine instance
+    File: cnv-monitor-vmi-migration
+  - Name: Cancelling the live migration of a virtual machine instance
+    File: cnv-cancel-vmi-migration
+  - Name: Configuring virtual machine eviction strategy
+    File: cnv-configuring-vmi-eviction-strategy
+# Node maintenance mode
+  - Name: Node maintenance mode
+    File: cnv-node-maintenance
+  - Name: Setting a node to maintenance mode
+    File: cnv-setting-node-maintenance
+  - Name: Resuming a node from maintenance mode
+    File: cnv-resuming-node
+# Installing VirtIO drivers on Windows virtual machines
+  - Name: Installing VirtIO driver on an existing Windows virtual machine
+    File: cnv-installing-virtio-drivers-on-existing-windows-vm
+  - Name: Installing VirtIO driver on a new Windows virtual machine
+    File: cnv-installing-virtio-drivers-on-new-windows-vm
+# Logging, events, and monitoring
+  - Name: Viewing logs
+    File: cnv-logs
+  - Name: Viewing events
+    File: cnv-events
+    Name: Viewing cluster information
+    File: cnv-using-dashboard-to-get-cluster-info
+  - Name: OpenShift cluster monitoring, logging, and Telemetry
+    File: cnv-openshift-cluster-monitoring
+  - Name: Collecting container-native virtualization data for Red Hat Support
+    File: cnv-collecting-cnv-data
+- Name: Container-native virtualization 2.1 release notes
+  Dir: cnv_release_notes
+  Topics:
+  - Name: Container-native virtualization 2.1 release notes
+    File: cnv-release-notes
+---
+Name: Serverless applications
+Dir: serverless
+Distros: openshift-enterprise
+Topics:
+### Overview
+- Name: Getting started with OpenShift Serverless
+  File: serverless-getting-started
+- Name: OpenShift Serverless product architecture
+  File: serverless-architecture
+### Installing OpenShift Serverless
+- Name: Installing OpenShift Serverless
+  File: installing-openshift-serverless
+### Knative services
+- Name: Getting started with Knative services
+  File: getting-started-knative-services
+- Name: Creating serverless applications
+  File: creating-serverless-applications
+- Name: Splitting traffic between revisions
+  File: splitting-traffic-between-revisions
+### Monitoring
+- Name: Monitoring OpenShift Serverless components
+  File: monitoring-serverless
+### Metering
+- Name: Using metering with OpenShift Serverless
+  File: serverless-metering
+### Cluster Logging
+- Name: Cluster logging with OpenShift Serverless
+  File: cluster-logging-serverless
+### Autoscaling
+- Name: Configuring Knative Serving autoscaling
+  File: configuring-knative-serving-autoscaling
+### Using Knative Client
+- Name: Using Knative Client
+  File: knative-client
+### Release Notes
+- Name: Release Notes
+  File: serverless-release-notes
